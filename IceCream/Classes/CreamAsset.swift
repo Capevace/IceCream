@@ -73,7 +73,7 @@ public class CreamAsset: Object {
     ///   - asset: The CKAsset where we will pull the URL for creating the asset
     /// - Returns: A CreamAsset if it was successful
     static func parse(from propName: String, record: CKRecord, asset: CKAsset) -> CreamAsset? {
-        guard let url = asset.fileURL else { return nil }
+        let url = asset.fileURL
         return CreamAsset(objectID: record.recordID.recordName, propName: propName, url: url)
     }
 
